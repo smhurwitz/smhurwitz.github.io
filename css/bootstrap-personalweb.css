@@ -1,0 +1,239 @@
+/*- - - - - - - - SITE-WIDE - - - - - - - - */
+
+/*Add custom font*/
+body {
+  font-family: 'Nunito Sans', sans-serif !important;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+main {
+	font-weight: 200;
+}
+
+/*Customize photo and name color/font/spacing */
+.tippy-top, .tippy-top a {
+	margin-top: 1rem;
+	letter-spacing: 3px;
+	color: #91aef7;
+} .tippy-top img {
+    width: 220px;
+}
+
+.name-largecaps {
+    font-size: 3.5rem;
+    text-decoration: none !important;
+} .name-smallcaps {
+    font-size: 3rem;
+    text-decoration: none !important;
+} .first-name {
+    margin-left: -3%;
+} .last-name {
+    margin-right: -3%;
+}
+
+.bubble-border {
+	font-size: 12px;
+}
+
+/*Customize header colors & font*/
+.site-header {
+    background-color: #ffffff;
+}
+.menu-item, .site-header .menu-item {
+    color: #91aef7;
+    letter-spacing: 2px;
+}
+.site-header .container .menu-item:hover {
+    color: #14246d;
+}
+
+/*Customize buttons*/
+.btn {
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #91aef7 !important;
+    border-color: #91aef7;
+}
+.btn:hover, .btn:focus, .btn:active {
+    color: white !important;
+    background-color: #91aef7;
+    border-color: #91aef7;
+}
+
+.fa, .fab {
+    color: #91aef7;
+}
+
+/*Modifications for mobile*/
+@media only screen and (max-width: 600px) {
+    body {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    .tippy-top img {
+        width: 150px;
+    }
+
+    .bubble-border-mobile {
+        font-size: 10px;
+        color: #91aef7 !important;
+        letter-spacing: 3px;
+    }
+
+    .tippy-top a {
+        letter-spacing: 1px;
+    } .name-largecaps {
+        font-size: 2rem;
+        margin-bottom: 0rem;
+        text-decoration: none;
+    } .name-smallcaps {
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    .site-header-mobile {
+        background-color: #ffffff;
+        margin-bottom: -5%;
+    } .navbar-toggler {
+        border-width: 0px;
+        border-radius: 3px;
+    } .navbar-toggler:hover, .navbar-toggler:focus, .navbar-toggler:active {
+        color: white !important;
+        background-color: #91aef7;
+    } .navbar-toggler:hover .fa, .navbar-toggler:focus .fa, .navbar-toggler:active .fa {
+        color: white;
+    }
+    .mobile-menu {
+        margin-right: 5%;
+        margin-top: -2%;
+        text-align: right;
+    } .mobile-menu li{
+        margin-bottom: 0.5rem;
+    } ul {
+        list-style-type: none;
+    }
+}
+
+/*- - - - - - - - HOME PAGE - - - - - - - - */
+/*Add margins to description on homepage*/
+.description {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/*Set format for soundcloud embed*/
+.soundcloud-embed {
+    height: 150;
+}
+
+/*Modifications for mobile*/
+@media only screen and (max-width: 600px) {
+    .description {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+}
+
+/*- - - - - - - - INTEREST PAGES - - - - - - - - */
+
+.project-blurbs {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.project-blurbs .row {
+    display: flex;
+    align-items: center;
+}
+
+/*Modifications for mobile*/
+@media only screen and (max-width: 600px) {
+    .project-blurbs img {
+        margin-bottom: 1.5rem;
+        color: red;
+    }
+
+    .project-blurbs {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
+
+/*- - - - - - - - CV PAGE - - - - - - - - */
+
+/*Update CV headings*/
+h3, h5 {
+    letter-spacing: 2px;
+    font-weight: 200;
+}
+td {
+    padding-right:20px;
+    vertical-align: text-top;
+    min-width: 120px;
+}
+.cv-row {
+    margin-left:10%;
+    margin-right:10%
+}
+
+/*Modifications for mobile*/
+@media only screen and (max-width: 600px) {
+    .cv-row {
+        margin-left: -18%;
+        margin-right: -18%;
+    }
+    td {
+        padding-right:10px;
+        min-width: 110px;
+    }
+}
+
+/*- - - - - - - - CONTACT PAGE - - - - - - - - */
+
+/*Make contact links grey and fade when hovered*/
+.contact-info {
+	margin-left: 10%;
+	margin-right: 10%;
+    margin-top: 5%;
+    /*padding-left: 5rem;*/
+    color: #818181;
+}
+.contact-info img {
+	opacity: 0.5;
+}
+.contact-info .contact-link:hover {
+	opacity: 0.25;
+}
+.contact-link {
+    color: #818181;
+    text-decoration: none !important;
+}
+.contact-info, .contact-info .fa, .contact-info .fab {
+    color: #818181;
+}
+
+
+
+/*@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.headshot {
+  animation: 1s ease-out 0s 1 slideInFromTop;
+}
+
+@keyframes getTaller {
+  0% {
+    height:0px;
+  }
+  100% {
+    height:220px;
+  }
+}
+.picture-spot {
+  animation: 1s ease-out 0s 1 getTaller;
+}*/

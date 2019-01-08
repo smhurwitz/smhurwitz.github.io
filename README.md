@@ -1,1 +1,1 @@
-# template
+# GitHub Repository for laurenmarietta.github.io
