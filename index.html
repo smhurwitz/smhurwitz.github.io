@@ -34,17 +34,26 @@
         </div>
         <a href="index.html" class="display-4 font-weight-bold text-center name-largecaps first-name">L<span class="name-smallcaps">AUREN</span> M. C<span class="name-smallcaps last-name">HAMBERS</span></a>
         <div class='bubble-border d-none d-sm-block'>&#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679;</div>
+        <div class='bubble-border-mobile d-block d-sm-none'> &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; </div>
       </div>
 
       <!-- Add desktop navigation bar -->
-      <nav class="site-header sticky-top py-1 d-none d-sm-block">
-        <div class="container d-flex flex-column flex-md-row justify-content-between">
-          <a class="menu-item py-2" href="index.html">ABOUT ME</a>
-          <a class="menu-item py-2" href="astro.html">ASTROPHYSICS</a>
-          <a class="menu-item py-2" href="afam.html">AFRICAN AMERICAN STUDIES</a>
-          <a class="menu-item py-2" href="cv.html">C/V</a>
-          <a class="menu-item py-2" href="contact.html">CONTACT</a>
-        </div>
+      <nav class="nav sticky-top py-1 px-3 d-none d-sm-flex site-header justify-content-between">
+        <a class="menu-item" href="index.html">ABOUT ME</a>
+        <a class="menu-item" href="datajustice.html">DATA JUSTICE</a>
+
+        <li class="menu-item dropdown">
+          <a class="dropdown-toggle menu-item" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            RESEARCH
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item menu-item" href="astro.html">ASTROPHYSICS</a>
+            <a class="dropdown-item menu-item" href="afam.html">AFRICAN AMERICAN STUDIES</a>
+          </div>
+        </li>
+
+        <a class="menu-item" href="cv.html">C/V</a>
+        <a class="menu-item" href="contact.html">CONTACT</a>
       </nav>
 
       <!-- Add mobile navigation bar -->
@@ -53,15 +62,26 @@
             <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="fa fa-bars"></span>
             </button>
-            <div class='bubble-border-mobile d-block d-sm-none'> &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; </div>
+
           </nav>
 
           <span class="collapse" id="navbarToggleExternalContent">
             <div class="mobile-menu">
               <ul>
                 <li><a class="menu-item" href="index.html">ABOUT ME</a></li>
-                <li><a class="menu-item" href="astro.html">ASTROPHYSICS</a><br></li>
-                <li><a class="menu-item" href="afam.html">AFRICAN AMERICAN STUDIES</a><br></li>
+
+                <li><a class="menu-item" href="datajustice.html">DATA JUSTICE</a></li>
+
+                <li class="menu-item dropdown">
+                  <a class="dropdown-toggle menu-item" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    RESEARCH
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item menu-item" href="astro.html">ASTROPHYSICS</a>
+                    <a class="dropdown-item menu-item" href="afam.html">AFRICAN AMERICAN STUDIES</a>
+                  </div>
+                </li>
+
                 <li><a class="menu-item" href="cv.html">C/V</a><br></li>
                 <li><a class="menu-item" href="contact.html">CONTACT</a></li>
               </ul>
@@ -73,7 +93,11 @@
       <div class="description my-4">
         <p>Hello!</p>
 
-        <p>Through August 2019, I have been working as a Research and Instrument Analyst for the James Webb Space Telescope mission at <a href="http://www.stsci.edu/" target="_blank">Space Telescope Science Institute</a> in Baltimore, Maryland. Originally from Hampton, VA, I received my B.S. from Yale in 2017, where I double-majored in astrophysics and African American studies. My primary academic interests include astrochemistry, gravitational wave astrophysics, and science studies. Additionally, I have a growing interest in applying quantitative analytic methods to social problems.</p>
+        <p>As the current Technology Fellow at the <a href="https://www.aclum.org/" target="_blank">ACLU of Massachusetts</a> in Boston, I work on the <a href="https://www.aclum.org/en/technology-liberty" target="_blank">Technology for Liberty Project</a> directed by Kade Crockford. My role includes exploring and visualizing government data in order to inform citizens about the effects of legislation and political leadership, as well as supporting ACLUM campaigns that operate at the intersection of technology and civil liberties.</p>
+
+        <p>My personal experience finding a job applying quantitative analytic methods to social problems was far from straightforward -- for those interested in pursuing similar questions, I maintain a <a href="datajustice.html" target="_blank">webpage</a> of organizations, programs, and thinkers who work at the convergence of data/tech/computation and society/justice/ethics.</p>
+
+        <p>Before joining the ACLU, I was a Research and Instrument Analyst for the James Webb Space Telescope mission at <a href="http://www.stsci.edu/" target="_blank">Space Telescope Science Institute</a> in Baltimore, Maryland. Originally from Hampton, VA, I received my B.S. from Yale in 2017, where I double-majored in astrophysics and African American studies.</p>
 
         <p>I am immensely passionate about working towards equity and inclusion in all of the spaces that I occupy.</p>
 
