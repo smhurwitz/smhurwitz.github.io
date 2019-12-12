@@ -289,6 +289,14 @@ td {
     color: #818181;
 }
 
+/*- - - - - - - - MAPS PAGE - - - - - - - - */
+.map-o-favorites {
+    padding: 1rem;
+}
+
+.map-o-favorites iframe {
+    width: 100%;
+}
 
 
 /*@keyframes slideInFromTop {
