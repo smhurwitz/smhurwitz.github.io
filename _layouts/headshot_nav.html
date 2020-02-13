@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+			<!-- Add picture, name, and (desktop) bubble border -->
+      <div class='tippy-top text-center'>
+        <div class='picture-spot'>
+          <img src='images/headshot.png' class='rounded-circle p-3 headshot' width=220>
+        </div>
+        <a href="index.html" class="display-4 font-weight-bold text-center name-largecaps first-name">L<span class="name-smallcaps">AUREN</span> M. C<span class="name-smallcaps last-name">HAMBERS</span></a>
+        <div class='bubble-border d-none d-sm-block'>&#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679;</div>
+        <div class='bubble-border-mobile d-block d-sm-none'> &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; &#9679; &#9673; &#9679; </div>
+      </div>
+
+      {% include nav.html %}
+
+    {{ content }}
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="js/vendor/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/modal.js"></script>
+  </body>
+</html>

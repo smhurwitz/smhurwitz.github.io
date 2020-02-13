@@ -1,1 +1,8 @@
+# PyCharm session info
 .idea/*
+
+# Jekyll build info
+_site
+Gemfile.lock
+.sass-cache
+.jekyll-metadata
