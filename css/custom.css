@@ -322,3 +322,12 @@ td {
 .picture-spot {
   animation: 1s ease-out 0s 1 getTaller;
 }*/
+
+.btn-resume {
+    margin-bottom: 1rem;
+}
+
+.btn-resume, .btn-cv {
+    width: 170px;
+    display: block;
+}
