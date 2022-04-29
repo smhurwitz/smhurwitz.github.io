@@ -4,6 +4,15 @@ window.onload = function () {
   $('#selectRace').change(changeIntroPortrait);
   $('#selectGender').change(changeIntroPortrait);
 
+  // Enable click-to-play and -pause functionality on video
+  $("#video").click(function() {
+    if (this.paused) {
+      this.play();
+    } else {
+      this.pause();
+    }
+  });
+
 };
 
 var audio = new Audio('audio/mixkit-negative-answer-lose-2032.wav');
@@ -23,16 +32,23 @@ changeIntroPortrait = function(){
 
 const all_sections = ["intro", "new_exec", "economy", "crim", "military", "protest", "climate", "cyber", "beginning", "conclusion"];
 const all_sections_no_intro = all_sections.slice(1);
-var speaking_video_id = ""
+
+
+var video = document.getElementById('video');
+var video_source = $('#video source')[0];
 
 loadSpeech = function(event, back=false) {
   // If there is a video playing, pause it
-  if (speaking_video_id != "") {
-    $(speaking_video_id)[0].pause()
-  }
+  video.pause()
+  // if (speaking_video_id != "") {
+  //   $(speaking_video_id)[0].pause()
+  // }
 
   $('#faceSelect')[0].style.display = "none"
-  $('#intro')[0].style.display = "block"
+  $('#speech')[0].style.display = "block"
+  
+  $('#video_col')[0].style.display = "table-cell"
+  $('#intro')[0].style.display = "table-cell"
 
   if (back == true) {
     // Hide all other sections
@@ -50,27 +66,12 @@ loadSpeech = function(event, back=false) {
   selectedRace = $("#selectRace").val();
 
   var video_filename = "videos/" + selectedRace + "_" + selectedGender + "_intro.mov"
-
-  var video = document.getElementById('video_intro');
-  var source = $('#video_intro source')[0];
-
-  source.setAttribute('src', video_filename);
+  video_source.setAttribute('src', video_filename);
 
   video.load();
 
-  $("#video_intro").click(function() {
-    if (this.paused) {
-      this.play();
-      speaking_video_id = "#video_intro"
-    } else {
-      this.pause();
-      speaking_video_id = ""
-    }
-  });
-
   if (back == false) {
-    $("#video_intro")[0].play()
-    speaking_video_id = '#video_' + section
+    video.play()
   }
 }
 
@@ -78,9 +79,10 @@ const visited_sections = [];
 
 loadSection = function(event, warn=false) {
   // If there is a video playing, pause it
-  if (speaking_video_id != "") {
-    $(speaking_video_id)[0].pause()
-  }
+  video.pause()
+  // if (speaking_video_id != "") {
+  //   $(speaking_video_id)[0].pause()
+  // }
 
   console.log("LOADING SECTION");
 
@@ -113,7 +115,7 @@ loadSection = function(event, warn=false) {
   }
 
   jquery_str = "#" + section
-  $(jquery_str)[0].style.display = "block"
+  $(jquery_str)[0].style.display = "table-cell"
 
   // Scroll to top of text
   location.hash = jquery_str;
@@ -123,31 +125,13 @@ loadSection = function(event, warn=false) {
   }
 
   var video_filename = "videos/" + selectedRace + "_" + selectedGender + "_" + section + ".mov"
-
-  var video = document.getElementById('video_' + section);
-  // var source = document.createElement('source');
-  var source = $('#video_' + section + " source")[0];
-
-  source.setAttribute('src', video_filename);
-  // source.setAttribute('type', 'video/mp4');
-  // video.appendChild(source);
+  video_source.setAttribute('src', video_filename);
 
   video.load();
-
-  $('#video_' + section).click(function() {
-    if (this.paused) {
-      this.play();
-      speaking_video_id = '#video_' + section
-    } else {
-      this.pause();
-      speaking_video_id = ""
-    }
-  });
 
   if (visited == false) {
     console.log("autoplaying!")
     video.play()
-    speaking_video_id = '#video_' + section
   }
 }
 

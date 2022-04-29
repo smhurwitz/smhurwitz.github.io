@@ -80,15 +80,16 @@
         </div>
       </div>
 
-      <div id="intro" class="speech" style="display:none;">
+      <div id="speech" style="display:none;">
         <table>
           <tr>
-            <td class="align-top" style="width: 50%; text-align: center;">
-               <video id="video_intro" width="320" height="240" preload="auto">
+            <td id="video_col" class="align-top" style="width: 50%; text-align: center;">
+               <video id="video" width="320" height="240" preload="auto">
                   <source src="" type="video/mp4">
                 </video> 
             </td>
-            <td>
+
+            <td id="intro">
               <p>My fellow Americans,
 
               <p>Hello, world. </p>
@@ -135,19 +136,7 @@
 
               <!-- <p><a href="#"><h4>Foreign Policy</h4></a></p> -->
             </td>
-          </tr>
-        </table>
-      </div>
-
-      <div id="new_exec" class="speech" style="display:none;">
-        <table>
-          <tr>
-            <td class="align-top" style="width: 50%; text-align: center;">
-               <video id="video_new_exec" width="320" height="240" preload="auto">
-                  <source src="" type="video/mp4">
-                </video> 
-            </td>
-            <td>
+            <td id="new_exec">
               <p>We must reexamine the role of the American executive branch - a branch that is fraught with red tape, partisanship, and politicking. My presidential cabinet will be undergoing a major software update.</p>
 
               <p>In my first executive order as President, I will be dissolving all current cabinet departments, including the Departments of State, Homeland Security, Defense, Justice, Treasury, Labor, Energy, Education, and more.</p>
@@ -165,19 +154,7 @@
               <p>Return to <button id="new_exec_return" type="button" class="link" onclick="loadSpeech(event, back=true);">address</button>.</p>
 
             </td>
-          </tr>
-        </table>
-      </div>
-
-      <div id="crim" class="speech" style="display:none;">
-        <table>
-          <tr>
-            <td class="align-top" style="width: 50%; text-align: center;">
-               <video id="video_crim" width="320" height="240" preload="auto">
-                  <source src="" type="video/mp4">
-                </video> 
-            </td>
-            <td>
+            <td id="crim">
               <p>It is past time to reestablish a state of law in order across this nation. However, the brave men and women making up our police departments are asked to do too much, and we have all witnessed the tragic consequences of that.</p>
 
               <p>My administration will bring about a New Age of Predictive Policing. All law enforcement agencies will be provided with resources to take human error out of policing.</p>
@@ -191,19 +168,7 @@
               <p>Return to <button id="crim_return" type="button" class="link" onclick="loadSpeech(event, back=true);">address</button>.</p>
 
             </td>
-          </tr>
-        </table>
-      </div>
-
-      <div id="economy" class="speech" style="display:none;">
-        <table>
-          <tr>
-            <td class="align-top" style="width: 50%; text-align: center;">
-               <video id="video_economy" width="320" height="240" preload="auto">
-                  <source src="" type="video/mp4">
-                </video> 
-            </td>
-            <td>
+            <td id="economy">
               <p>Too many in our nation struggle with poverty and financial insecurity. To address these problems, my administration will strengthen the value of the US dollar beyond anything ever seen before: we are going digital. </p>
 
               <p>In my first 100 days, I will begin a transition to convert the US Dollar into Americoin - our official national cryptocurrency.</p>
@@ -217,19 +182,7 @@
               <p>Return to <button id="economy_return" type="button" class="link" onclick="loadSpeech(event, back=true);">address</button>.</p>
 
             </td>
-          </tr>
-        </table>
-      </div>
-
-      <div id="military" class="speech" style="display:none;">
-        <table>
-          <tr>
-            <td class="align-top" style="width: 50%; text-align: center;">
-               <video id="video_military" width="320" height="240" preload="auto">
-                  <source src="" type="video/mp4">
-                </video> 
-            </td>
-            <td>
+            <td id="military">
               <p>We all know America is a global superpower. For that, we have our brave servicemen and women to thank, who defend us from threats at home and overseas. </p>
 
               <p>We all celebrate their sacrifice and bravery, as they put themselves in harms’ way for the good of the country and the world. But we also all know the pain that faraway deployments and the horrors of war cause. No more. </p>
@@ -245,19 +198,7 @@
               <p>Return to <button id="military_return" type="button" class="link" onclick="loadSpeech(event, back=true);">address</button>.</p>
 
             </td>
-          </tr>
-        </table>
-      </div>
-
-      <div id="protest" class="speech restricted" style="display:none;">
-        <table>
-          <tr>
-            <td class="align-top" style="width: 50%; text-align: center;">
-               <video id="video_protest" width="320" height="240" preload="auto">
-                  <source src="" type="video/mp4">
-                </video> 
-            </td>
-            <td>
+            <td id ="protest">
               <p>To ensure national security, all dissidents will be tracked by nationwide facial recognition and documented in a database that is shared across all local, state, and federal law enforcement.</p>
               
               <hr>
@@ -265,19 +206,8 @@
               <p>Return to <button id="protest_return" type="button" class="link" onclick="loadSpeech(event, back=true);">address</button>.</p>
 
             </td>
-          </tr>
-        </table>
-      </div>
 
-      <div id="climate" class="speech restricted" style="display:none;">
-        <table>
-          <tr>
-            <td class="align-top" style="width: 50%; text-align: center;">
-               <video id="video_climate" width="320" height="240" preload="auto">
-                  <source src="" type="video/mp4">
-                </video> 
-            </td>
-            <td>
+            <td id="climate">
 
               <p>Hosting and maintaining so many servers to run the American executive branch will require a lot of compute. While we acknowledge that this has a <a class="ext_link" href="https://www.technologyreview.com/2019/06/06/239031/training-a-single-ai-model-can-emit-as-much-carbon-as-five-cars-in-their-lifetimes/">sizeable environmental impact</a>, we will nullify this by <a class="ext_link" href="https://features.propublica.org/brazil-carbon-offsets/inconvenient-truth-carbon-credits-dont-work-deforestation-redd-acre-cambodia/" >investing in carbon offsets</a>.</p>
               
@@ -286,19 +216,8 @@
               <p>Return to <button id="climate_return" type="button" class="link" onclick="loadSpeech(event, back=true);">address</button>.</p>
 
             </td>
-          </tr>
-        </table>
-      </div>
 
-      <div id="cyber" class="speech restricted" style="display:none;">
-        <table>
-          <tr>
-            <td class="align-top" style="width: 50%; text-align: center;">
-               <video id="video_cyber" width="320" height="240" preload="auto">
-                  <source src="" type="video/mp4">
-                </video> 
-            </td>
-            <td>
+            <td id="cyber">
               
               <p>The newly established Federal Information Security Agency will constantly update my system to resist every attack, large or small, from foreign enemies or domestic cyberterrorists. My servers will be located in a secret, secured location.</p>
               
@@ -307,19 +226,8 @@
               <p>Return to <button id="cyber_return" type="button" class="link" onclick="loadSpeech(event, back=true);">address</button>.</p>
 
             </td>
-          </tr>
-        </table>
-      </div>
 
-      <div id="beginning" class="speech" style="display:none;">
-        <table>
-          <tr>
-            <td class="align-top" style="width: 50%; text-align: center;">
-               <video id="video_beginning" width="320" height="240" preload="auto">
-                  <source src="" type="video/mp4">
-                </video> 
-            </td>
-            <td>
+            <td id="beginning">
               <p>My vision for a Digital America extends far beyond the executive branch. We believe that, after the successes of my administration, Congress will take action to upgrade the legislature and judiciary as well.</p>
 
               <p>Imagine a judicial system free of human bias - where every subjective, imperfect judge is replaced by an ensemble of fair, infallible algorithms. Inequities in charging, bail, sentencing will be wiped out with the push of a button. True justice must be automated.</p>
@@ -335,19 +243,8 @@
               <p>Continue to <button id="conclusion_link" type="button" class="link" onclick="loadSection(event);">closing remarks</button>.</p>
 
             </td>
-          </tr>
-        </table>
-      </div>
 
-      <div id="conclusion" class="speech" style="display:none;">
-        <table>
-          <tr>
-            <td class="align-top" style="width: 50%; text-align: center;">
-               <video id="video_conclusion" width="320" height="240" preload="auto">
-                  <source src="" type="video/mp4">
-                </video> 
-            </td>
-            <td>
+            <td id="conclusion">
               <p>The past centuries have shown how democracy is both precious and fragile. And at this hour, my friends, democracy will never again be threatened.</p>
 
               <p>Americans have chosen truth and security over division and gridlock.</p>

@@ -78,6 +78,10 @@ button.link:hover {
   text-decoration: underline;
 }
 
+td {
+  display: none;
+}
+
 .ext_link, .ext_link:hover {
   color: #830000;
 }
@@ -104,7 +108,7 @@ button.link:hover {
   color: #0a2458;
 }
 
-.speech {
+#speech {
   margin-left: 10%; 
   margin-right: 10%
 }
