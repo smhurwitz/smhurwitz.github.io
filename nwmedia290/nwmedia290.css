@@ -58,6 +58,7 @@ video {
   margin-top: 3rem;
   width: 85%;
   height: 100%;
+  border: #0a2458 solid 10px;
 }
 
 button.link {
