@@ -31,7 +31,7 @@
 
     <div id="alert_bar"></div>
 
-    <div class="row" style="height: 56px;">
+    <div class="row" style="height: 56px; margin: 0px">
       <div class="col-md-4" style="height: 56px; align-items:center; padding:19px">
           <span id="wh_title">The White House</span>
       </div>
@@ -56,7 +56,7 @@
       <div id="faceSelect" style="background-color: aliceblue; border-radius: 15px; max-width:800px; margin:auto; margin-top: 2rem; width: 85%">
         <div class="row">
           <div class="col-md-6 text-center" style="font-size: 24px; font-style:italic; margin:auto;">
-            My president is a <br>
+            My president is <span id="select_article">a</span> <br>
             <select id="selectRace" class="form-select" aria-label="Default select example">
               <option value="" selected >---</option>
               <option value="black">Black</option>
@@ -287,7 +287,7 @@
             <div class="modal-body">
               <div class="row">
                 <div class="col-md-6 text-center" style="font-size: 24px; font-style:italic; margin:auto;">
-                  My president is a <br>
+                  My president is <span id="select_article_modal">a</span> <br>
                   <select id="selectRace_modal" class="form-select" aria-label="Default select example">
                     <option value="" selected >---</option>
                     <option value="black">Black</option>

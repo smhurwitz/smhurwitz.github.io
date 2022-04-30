@@ -45,6 +45,12 @@ changeIntroPortrait = function(){
     selectedRace = $("#selectRace").val();
     var portrait_filename
 
+    if (selectedRace == "asian") {
+      $("#select_article")[0].innerHTML = "an"
+    } else {
+      $("#select_article")[0].innerHTML = "a"
+    }
+
     if (selectedGender == "" || selectedRace == "") {
       portrait_filename = "images/blank_portrait.png"
       $('#introPortrait')[0].style.opacity = .5
@@ -52,7 +58,7 @@ changeIntroPortrait = function(){
     } else {
       portrait_filename = "images/" + selectedRace + "_" + selectedGender + ".jpg"
       $('#introPortrait')[0].style.opacity = 1
-      $("#continueButton")[0].disabled = false; 
+      $("#continueButton")[0].disabled = false;
     }
     $('#introPortrait')[0].src = portrait_filename    
 
@@ -64,18 +70,20 @@ changeModalPortrait = function(){
   var selectedRace_modal = $("#selectRace_modal").val();
   var portrait_filename
 
+  if (selectedRace_modal == "asian") {
+    $("#select_article_modal")[0].innerHTML = "an"
+  } else {
+    $("#select_article_modal")[0].innerHTML = "a"
+  }
+
   console.log(selectedGender_modal, selectedRace_modal)
 
   if (selectedGender_modal == "" || selectedRace_modal == "") {
-    console.log("not valid")
     portrait_filename = "images/blank_portrait.png"
     $('#introPortrait_modal')[0].style.opacity = .5
     $("#modalConfirmButton")[0].disabled = true; 
   } else {
-    console.log("valid")
     portrait_filename = "images/" + selectedRace_modal + "_" + selectedGender_modal + ".jpg"
-    console.log($('#introPortrait_modal'))
-    console.log($('#introPortrait_modal')[0])
     $('#introPortrait_modal')[0].style.opacity = 1
     $("#modalConfirmButton")[0].disabled = false; 
   }
