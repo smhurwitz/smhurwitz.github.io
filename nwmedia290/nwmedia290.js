@@ -3,11 +3,24 @@ var audio = new Audio('audio/mixkit-negative-answer-lose-2032.wav');
 var selectedGender;
 var selectedRace;
 var placeholder_img
+var visited_sections = [];
 
 window.onload = function () {
 
+  // Re-init dropdowns
+  $("#selectGender")[0].value = ""
+  $("#selectRace")[0].value = ""
+  $("#continueButton")[0].disabled = true; 
+  $("#selectGender_modal")[0].value = ""
+  $("#selectRace_modal")[0].value = ""
+  $("#modalConfirmButton")[0].disabled = true; 
+
+  // Set up event listeners from dropdowns
   $('#selectRace').change(changeIntroPortrait);
   $('#selectGender').change(changeIntroPortrait);
+
+  $('#selectRace_modal').change(changeModalPortrait);
+  $('#selectGender_modal').change(changeModalPortrait);
 
   // Enable click-to-play and -pause functionality on video
   $("#video").click(function() {
@@ -27,15 +40,71 @@ var selectedGender;
 var selectedRace;
 
 changeIntroPortrait = function(){
-    $('#introPortrait')[0].style.opacity = 1
-
+    
     selectedGender = $("#selectGender").val();
     selectedRace = $("#selectRace").val();
+    var portrait_filename
 
-    var portrait_filename = "images/" + selectedRace + "_" + selectedGender + ".jpg"
+    if (selectedGender == "" || selectedRace == "") {
+      portrait_filename = "images/blank_portrait.png"
+      $('#introPortrait')[0].style.opacity = .5
+      $("#continueButton")[0].disabled = true; 
+    } else {
+      portrait_filename = "images/" + selectedRace + "_" + selectedGender + ".jpg"
+      $('#introPortrait')[0].style.opacity = 1
+      $("#continueButton")[0].disabled = false; 
+    }
     $('#introPortrait')[0].src = portrait_filename    
 
   }
+
+changeModalPortrait = function(){
+  
+  var selectedGender_modal = $("#selectGender_modal").val();
+  var selectedRace_modal = $("#selectRace_modal").val();
+  var portrait_filename
+
+  console.log(selectedGender_modal, selectedRace_modal)
+
+  if (selectedGender_modal == "" || selectedRace_modal == "") {
+    console.log("not valid")
+    portrait_filename = "images/blank_portrait.png"
+    $('#introPortrait_modal')[0].style.opacity = .5
+    $("#modalConfirmButton")[0].disabled = true; 
+  } else {
+    console.log("valid")
+    portrait_filename = "images/" + selectedRace_modal + "_" + selectedGender_modal + ".jpg"
+    console.log($('#introPortrait_modal'))
+    console.log($('#introPortrait_modal')[0])
+    $('#introPortrait_modal')[0].style.opacity = 1
+    $("#modalConfirmButton")[0].disabled = false; 
+  }
+  $('#introPortrait_modal')[0].src = portrait_filename    
+
+}
+
+updateAvatar = function() {
+  video.pause()
+  console.log("selected avatar")
+  selectedGender = $("#selectGender_modal").val();
+  selectedRace = $("#selectRace_modal").val();
+  placeholder_img.src = "images/" + selectedRace + "_" + selectedGender + ".jpg"
+
+  var current_src = video_source.src;
+  video_name_end = current_src.split("man")[1];
+  video_filename = "videos/" + selectedRace + "_" + selectedGender + video_name_end
+  console.log(video_filename)
+
+  video_source.setAttribute('src', video_filename);
+  video.poster = "images/" + selectedRace + "_" + selectedGender + ".jpg"
+
+  video.load();
+
+  visited_sections = [];
+
+  $('#reselectModal').modal('hide')
+};
+
 
 const all_sections_no_intro = ["new_exec", "economy", "crim", "military", "protest", "climate", "cyber", "beginning", "conclusion"];
 
@@ -47,9 +116,6 @@ loadSpeech = function(event, back=false) {
   if (back==true) {
     video.pause()
   }
-
-  selectedGender = $("#selectGender").val();
-  selectedRace = $("#selectRace").val();
 
   if (back==false) {
     placeholder_img.src = "images/" + selectedRace + "_" + selectedGender + ".jpg"
@@ -91,7 +157,7 @@ loadSpeech = function(event, back=false) {
   }
 }
 
-const visited_sections = [];
+
 
 loadSection = function(event, warn=false) {
   // If there is a video playing, pause it

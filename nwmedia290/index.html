@@ -58,7 +58,7 @@
           <div class="col-md-6 text-center" style="font-size: 24px; font-style:italic; margin:auto;">
             My president is a <br>
             <select id="selectRace" class="form-select" aria-label="Default select example">
-              <option selected >---</option>
+              <option value="" selected >---</option>
               <option value="black">Black</option>
               <option value="latinx">Latinx</option>
               <option value="asian">Asian</option>
@@ -66,13 +66,13 @@
             </select>
 
             <select id="selectGender" class="form-select" aria-label="Default select example">
-              <option selected >---</option>
+              <option value="" selected >---</option>
               <option value="woman">Woman</option>
               <option value="man">Man</option>
             </select>
 
-            <button id="continueButton" type="button" class="btn btn-dark" onclick="loadSpeech(event);" style="display:block; margin:auto; margin-top:1rem">Continue</button>
-            <em style="font-size: 1rem"><a class="fas fa-info" href="#"></a> More about my face</em>
+            <button id="continueButton" type="button" class="btn btn-dark" onclick="loadSpeech(event);" style="display:block; margin:auto; margin-top:1rem" disabled>Continue</button>
+            <button class="link" data-toggle="modal" data-target="#aboutFaceModal"><em style="font-size: 1rem"><a class="fas fa-info" href="#"></a> More about my face</em></button>
           </div>
           <div class="col-md-6 text-center">
             <img id="introPortrait" src="images/blank_portrait.png" width=80% style="margin: 1rem; opacity: .5; max-width: 250px;">
@@ -84,11 +84,14 @@
         <table>
           <tr>
             <td id="video_col" class="align-top" style="width: 50%; text-align: center;">
-              <div id="video_holder">
-                <img id="loadingPlaceholder">
-                <video id="video" preload="auto">
-                  <source src="" type="video/mp4">
-                </video> 
+              <div id="sticky_col_content">
+                <em style="opacity:.6;"><button class="link" data-toggle="modal" data-target="#reselectModal">Select a different presidential avatar</button></em>
+                <div id="video_holder">
+                  <img id="loadingPlaceholder">
+                  <video id="video" preload="auto">
+                    <source src="" type="video/mp4">
+                  </video> 
+                </div>
               </div>
             </td>
 
@@ -271,6 +274,74 @@
         </table>
       </div>
 
+      <!-- Modal to reselect avatar -->
+      <div class="modal fade" id="reselectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLongTitle">Choose your president</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6 text-center" style="font-size: 24px; font-style:italic; margin:auto;">
+                  My president is a <br>
+                  <select id="selectRace_modal" class="form-select" aria-label="Default select example">
+                    <option value="" selected >---</option>
+                    <option value="black">Black</option>
+                    <option value="latinx">Latinx</option>
+                    <option value="asian">Asian</option>
+                    <option value="white">White</option>
+                  </select>
+
+                  <select id="selectGender_modal" class="form-select" aria-label="Default select example">
+                    <option value="" selected >---</option>
+                    <option value="woman">Woman</option>
+                    <option value="man">Man</option>
+                  </select>
+
+                  <!-- <button id="continueButton" type="button" class="btn btn-dark" onclick="loadSpeech(event);" style="display:block; margin:auto; margin-top:1rem" disabled>Continue</button> -->
+                  <button class="link" data-toggle="modal" data-target="#aboutFaceModal"><em style="font-size: 1rem; display:block;"><a class="fas fa-info" href="#"></a> More about my face</em></button>
+                </div>
+                <div class="col-md-6 text-center">
+                  <img id="introPortrait_modal" src="images/blank_portrait.png" width=80% style="margin: 1rem; opacity: .5; max-width: 250px;">
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="modalConfirmButton" class="btn btn-primary" onclick="updateAvatar();">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal about faces -->
+      <div class="modal fade" id="aboutFaceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLongTitle">About my face</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>The faces you see here are <a class="ext_link" href="https://this-person-does-not-exist.com/en">generated by artificial intelligence</a> - they are not real photos, nor do they depict real people.</p>
+              
+              <p>My ability to speak to Americans with a truly unique presidential face is yet another example of how powerful American technology has become over the past century.</p>
+              
+              <p>My specific avatars were created by <a class="ext_link" href="https://generated.photos/">Generated Photos</a>.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Modal with scary message -->
       <div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -318,6 +389,10 @@
               <tr>
                 <td><em>Image speaking animation:</em></td>
                 <td style="padding-left: 1rem;"><a class="ext_link" href="https://talkrapp.com/">Talkr</a></td>
+              </tr>
+              <tr>
+                <td><em>Voices:</em></td>
+                <td style="padding-left: 1rem;"><a class="ext_link" href="https://freetts.com/">FreeTTS</a></td>
               </tr>
               <tr>
                 <td><em>Sound effects:</em></td>
