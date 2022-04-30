@@ -68,6 +68,7 @@ video, #loadingPlaceholder {
   left: 0;
   width: 100%;
   border: #0a2458 solid 10px;
+  max-width: 350px;
 }
 
 #loadingPlaceholder {
@@ -98,7 +99,7 @@ button.link:hover {
   text-decoration: underline;
 }
 
-td {
+#speech td {
   display: none;
 }
 
