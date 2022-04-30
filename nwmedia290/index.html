@@ -84,9 +84,12 @@
         <table>
           <tr>
             <td id="video_col" class="align-top" style="width: 50%; text-align: center;">
-               <video id="video" width="320" height="240" preload="auto">
+              <div id="video_holder">
+                <img id="loadingPlaceholder">
+                <video id="video" preload="auto">
                   <source src="" type="video/mp4">
                 </video> 
+              </div>
             </td>
 
             <td id="intro">
@@ -240,7 +243,7 @@
 
               <p>Return to <button id="beginning_return" type="button" class="link" onclick="loadSpeech(event, back=true);">address</button>.</p>
 
-              <p>Continue to <button id="conclusion_link" type="button" class="link" onclick="loadSection(event);">closing remarks</button>.</p>
+              <p>Continue to <button id="conclusion_link2" type="button" class="link" onclick="loadSection(event);">closing remarks</button>.</p>
 
             </td>
 

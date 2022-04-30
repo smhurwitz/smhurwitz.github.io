@@ -1,3 +1,8 @@
+// Initialize global vars
+var audio = new Audio('audio/mixkit-negative-answer-lose-2032.wav');
+var selectedGender;
+var selectedRace;
+var placeholder_img
 
 window.onload = function () {
 
@@ -12,6 +17,8 @@ window.onload = function () {
       this.pause();
     }
   });
+
+  placeholder_img = $("#loadingPlaceholder")[0]
 
 };
 
@@ -30,23 +37,30 @@ changeIntroPortrait = function(){
 
   }
 
-const all_sections = ["intro", "new_exec", "economy", "crim", "military", "protest", "climate", "cyber", "beginning", "conclusion"];
-const all_sections_no_intro = all_sections.slice(1);
-
+const all_sections_no_intro = ["new_exec", "economy", "crim", "military", "protest", "climate", "cyber", "beginning", "conclusion"];
 
 var video = document.getElementById('video');
 var video_source = $('#video source')[0];
 
 loadSpeech = function(event, back=false) {
   // If there is a video playing, pause it
-  video.pause()
-  // if (speaking_video_id != "") {
-  //   $(speaking_video_id)[0].pause()
-  // }
+  if (back==true) {
+    video.pause()
+  }
+
+  selectedGender = $("#selectGender").val();
+  selectedRace = $("#selectRace").val();
+
+  if (back==false) {
+    placeholder_img.src = "images/" + selectedRace + "_" + selectedGender + ".jpg"
+  }
+
+  placeholder_img.style.display = "block"
+  console.log("loading speech intro; showing placeholder")
 
   $('#faceSelect')[0].style.display = "none"
   $('#speech')[0].style.display = "block"
-  
+
   $('#video_col')[0].style.display = "table-cell"
   $('#intro')[0].style.display = "table-cell"
 
@@ -62,13 +76,15 @@ loadSpeech = function(event, back=false) {
 
   }
 
-  selectedGender = $("#selectGender").val();
-  selectedRace = $("#selectRace").val();
-
   var video_filename = "videos/" + selectedRace + "_" + selectedGender + "_intro.mov"
   video_source.setAttribute('src', video_filename);
+  video.poster = "images/" + selectedRace + "_" + selectedGender + ".jpg"
 
   video.load();
+
+  // Set up video events
+  $("#video").on("loadstart", function() { placeholder_img.style.display = "block"; console.log("loading; showing placeholder");} );
+  $("#video").on("loadeddata", function() { placeholder_img.style.display = "none"; console.log("hiding placeholder"); } );
 
   if (back == false) {
     video.play()
@@ -80,34 +96,25 @@ const visited_sections = [];
 loadSection = function(event, warn=false) {
   // If there is a video playing, pause it
   video.pause()
-  // if (speaking_video_id != "") {
-  //   $(speaking_video_id)[0].pause()
-  // }
 
-  console.log("LOADING SECTION");
+  placeholder_img.style.display = "block"
+  console.log("switching sections; showing placeholder")
 
   var section = event.target.id
-  console.log(section)
-  section = section.substring(0, section.length - 5); // Remove "_link"
+  section = section.split("_link")[0]; // Remove "_link"
+  console.log("switching to section:" + section)
 
   // Determine if this is the first time we've visited this section
-  console.log(visited_sections)
-  console.log(visited_sections)
   if (visited_sections.indexOf(section) > -1) {
-    console.log("repeat visit")
     var visited = true
   } else {
-    console.log("first visit")
     var visited = false;
     visited_sections.push(section);
-    console.log(visited_sections)
   }
 
-  const i_remove = all_sections.indexOf(section);
-  const sections_to_hide = all_sections;
-  if (i_remove > -1) {
-    sections_to_hide.splice(i_remove, 1); // 2nd parameter means remove one item only
-  }
+  const sections_to_hide = ["intro", "new_exec", "economy", "crim", "military", "protest", "climate", "cyber", "beginning", "conclusion"];
+  const i_remove = sections_to_hide.indexOf(section);
+  sections_to_hide.splice(i_remove, 1); 
 
   for (const id of sections_to_hide) {
     jquery_str = "#" + id
@@ -130,7 +137,6 @@ loadSection = function(event, warn=false) {
   video.load();
 
   if (visited == false) {
-    console.log("autoplaying!")
     video.play()
   }
 }

@@ -52,12 +52,27 @@ option {
   background-color: white;
 }
 
-video {
+#video_holder {
   position: sticky;
   top: 30%;
   margin-top: 3rem;
   width: 85%;
   height: 100%;
+  min-height: 400px;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+video, #loadingPlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: #0a2458 solid 10px;
+}
+
+#loadingPlaceholder {
+  z-index : 1;
   border: #0a2458 solid 10px;
 }
 
