@@ -73,7 +73,36 @@ video, #loadingPlaceholder {
 
 #loadingPlaceholder {
   z-index : 1;
-  border: #0a2458 solid 10px;
+}
+
+/*Speech on mobile*/
+@media only screen and (max-device-width: 480px) {
+  #loadingPlaceholder, video {
+    border-width: 4px;
+  }
+
+  #video_col {
+    position: sticky;
+    top: 0px;
+    width: 100% !important;
+    background-color: white;
+  }
+
+  #sticky_col_content {
+    margin-top: 1rem !important;
+  }
+
+  #video_holder {
+    min-height: 325px;
+  }
+
+  footer {
+    height: 75px;
+  }
+
+  #attributionsModal td {
+    border-bottom: rgba(128, 128, 128, .3) solid 1px;
+  }
 }
 
 #sticky_col_content {
@@ -84,7 +113,7 @@ video, #loadingPlaceholder {
 
 button.link {
   display: inline-block;
-  position: relative;
+  /*position: relative;*/
   background-color: transparent;
   cursor: pointer;
   border: 0;
@@ -129,9 +158,23 @@ button.link:hover {
   color: #0a2458;
 }
 
+@media only screen and (max-device-width: 480px) {
+  #logo_row {
+    position: absolute;
+    margin-top: 24px;
+  }
+}
+
 #speech {
   margin-left: 10%; 
   margin-right: 10%
+}
+
+@media only screen and (max-device-width: 480px) {
+  #speech {
+    margin-left: 5%; 
+    margin-right: 5%
+  }
 }
 
 .modal-backdrop.fade.show {
