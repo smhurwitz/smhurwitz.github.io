@@ -1,0 +1,28 @@
+---
+layout: nav
+title: News
+---
+
+<main>
+
+  <div class="news">
+  <table>
+    {% for post in site.posts %}
+      <div class="row">
+          <!-- <td class="news-date" > -->
+          <div class="col-md-3" style="text-align:right"><b>
+            <i class="fa {{ post.fontawesome-icon }}"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ post.date | date: "%m/%Y" }}
+          </b></div>
+          <div class="col-md-9">
+            {{ post.content }}
+          </div>
+        </div>
+    {% endfor %}
+  </table>
+  </div>
+
+</main>
+
+{% for post in site.posts limit:1 %}
+<footer>Updated {{ post.date | date: "%B %d, %Y" }}</footer>
+{% endfor %}

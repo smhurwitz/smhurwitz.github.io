@@ -194,8 +194,8 @@ footer {
 /*- - - - - - - - HOME PAGE - - - - - - - - */
 /*Add margins to description on homepage*/
 .description {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 /*Set format for soundcloud embed*/
@@ -209,6 +209,30 @@ footer {
         margin-left: 7%;
         margin-right: 7%;
     }
+}
+
+.fa-ul {
+    width: 100%;
+    font-size: 12px;
+    margin-left: 3rem !important;
+}
+
+.fa-li {
+    margin-bottom: 1rem;
+    text-align: left !important;
+    width: 100% !important;
+}
+
+.intro-text {
+    padding-right: 5%;
+}
+
+.latest-news {
+    background-color: aliceblue;
+}
+
+.fa-li p {
+    margin-right: 30px;
 }
 
 /*- - - - - - - - INTEREST PAGES - - - - - - - - */
@@ -249,8 +273,13 @@ td {
     min-width: 120px;
 }
 .cv-row {
-    margin-left:10%;
-    margin-right:10%
+    margin-left:15%;
+    margin-right:15%
+}
+
+/*link icons*/
+.cv-row .fa, .cv-row .fab {
+    color: black;
 }
 
 /*Modifications for mobile*/
@@ -330,4 +359,16 @@ td {
 .btn-resume, .btn-cv {
     width: 170px;
     display: block;
+}
+
+/*- - - - - - - - NEWS PAGE - - - - - - - - */
+
+.news-date {
+    color: #91aef7;
+}
+
+.news {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2rem;
 }
