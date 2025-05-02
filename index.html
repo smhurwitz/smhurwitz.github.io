@@ -10,7 +10,8 @@
 .column {
   float: left;
   width: 50.00%;
-  padding: 10px;
+  padding: 6px;
+  overflow: ;
 }
 
 /* Clearfix (clear floats) */
@@ -20,9 +21,23 @@
   display: table;
 }
 
-#images{
-    text-align:center;
+#left_image{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 600px;
 }
+
+#right_image{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 600px;
+}
+
+
+
+
 
 </style>
 
@@ -30,11 +45,11 @@
 <body>
 
 <div class="row">
-  <div class="column" id="images">
-    <img src="media/personal.jpg" alt="Snow" style="width:75%">
+  <div class="column" id="left_image">
+    <img src="media/personal_faded.jpg" alt="Snow" style="width:75%">
   </div>
-  <div class="column">
-    <img src="media/professional.jpeg" alt="Forest" style="width:75%">
+  <div class="column" id="right_image">
+    <img src="media/professional_faded.jpg" alt="Forest" style="width:75%">
   </div>
 </div>
 
